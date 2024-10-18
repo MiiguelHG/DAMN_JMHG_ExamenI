@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Año Bisiesto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Año Bisiesto</h1>
+        <input type="number" id="yearInput" placeholder="Ingrese el año">
+        <button onclick="checkLeapYear()">Verificar</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkLeapYear() {
+            const year = document.getElementById('yearInput').value;
+            let result = '';
+
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                result = `${year} es un año bisiesto.`;
+            } else {
+                result = `${year} no es un año bisiesto.`;
+            }
+
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>
